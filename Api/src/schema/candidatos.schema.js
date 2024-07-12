@@ -6,6 +6,11 @@ export const schemaCandidatosPost = z.object({
     }).min(1, {
         message: "El nombre es requerido"
     }),
+    email: z.string({
+        required_error: "El email es requerido"
+    }).min(1, {
+        message: "El email es requerido"
+    }),
     puesto: z.string({
         required_error: "El puesto es requerido"
     }).min(1, {

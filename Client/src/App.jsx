@@ -10,6 +10,7 @@ import Add from "./view/Add/Add.jsx"
 import Favorito from "./view/Favorito/Favorito.jsx"
 import Help from "./view/Help/Help.jsx"
 import Profile from "./view/Profile/Profile.jsx"
+import PageError from "./view/PageError/PageError.jsx"
 
 import ProteccionRutas from "./ProteccionRutas"
 import Edit from "./view/Edit/Edit.jsx"
@@ -37,6 +38,7 @@ function App() {
                 <Route path="/save" element={<Favorito />} />
                 <Route path="/help" element={<Help />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/error-page" element={<PageError />} />
               </Route>
 
             </Routes>  

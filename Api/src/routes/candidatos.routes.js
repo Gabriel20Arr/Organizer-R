@@ -3,7 +3,7 @@ import { untenticacionRequerida } from "../middlewares/validateToken.js";
 import { getCandidatos, getCandidato, postCandidatos, deleteCandidatos, putCandidatos } from "../controllers/Candidatos.controller.js";
 
 import {validateSchema} from "../middlewares/validator.schema.js"
-import {schemaCandidatosPost} from "../schema/candidatos.schema.js"
+import { schemaCandidatosPost } from "../schema/candidatos.schema.js"
 
 const router = Router()
 

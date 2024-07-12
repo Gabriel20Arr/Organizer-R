@@ -16,6 +16,7 @@ export const useCandidatos = () => {
 export function CandidatosProvider({children}) {
     const [ candidatos, setCandidatos ] = useState([])
     const [favoritos, setFavoritos] = useState([]);
+    const [ error, setError ] = useState(null)
 
     const getCandidatos = async () => {
         try {
@@ -28,17 +29,23 @@ export function CandidatosProvider({children}) {
     }
 
     const createCandidatos = async (data) => {
-        const res = await createCandidatosRequest(data)
-        // console.log(res);
+        try {
+            const res = await createCandidatosRequest(data)
+            console.log(res);
+        } catch (error) {
+            setError(error.response.data)
+            console.log("err:", error.response);
+        }
     }
 
     
     const updateCandidatos = async (id, data) => {
         try {
             const res = await updateCandidatosRequest(id, data)
-            // console.log("res:", res);
+            console.log("res:", res);
         } catch (error) {
-            console.log(error);
+            setError(error.response.data)
+            console.log("err:", error.response.data);
         }
     }
 
@@ -68,7 +75,8 @@ export function CandidatosProvider({children}) {
             createCandidatos,
             updateCandidatos,
             deleteCandidatos,
-            agregarAFavoritos
+            agregarAFavoritos,
+            error
         }}>
             {children}
         </ContextCandidatos.Provider>

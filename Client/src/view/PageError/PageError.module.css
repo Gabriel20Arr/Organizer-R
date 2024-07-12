@@ -1,0 +1,56 @@
+.ContainerPage{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+
+    height: 100vh;
+    width: 100%;
+}
+
+.ContainerPage2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: #e4e4e4;
+
+    height: 200px;
+    width: 300px;
+}
+
+.PageE {
+    text-align: center;
+    
+    width: 100%;
+    
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.Page {
+    text-align: center;
+    
+    width: 100%;
+    
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.back{
+    font-weight: bold;
+    font-size: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    transition: transform 0.5s ease-in-out;
+}
+
+.back:hover{
+    transform: scale(1.1);
+
+    font-weight: bold;
+    font-size: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

@@ -1,5 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react"
-import { registerRequest, loginRequest, verifyToken } from "../api/auth.js"
+import { registerRequest, loginRequest, verifyToken, profileRequest } from "../api/auth.js"
 import Cookies from "js-cookie"
 
 export const AuthContext = createContext()
@@ -39,9 +39,19 @@ export const AuthProvider = ({children}) => {
             setAutenticado(true)
             setUser(res.data);
         } catch (error) {
-            console.log("errCont:", error);
+            // console.log("errCont:", error);
             setAutenticado(false)
             setErrors(error.response.data)
+        }
+    }
+
+    const profile = async () => {
+        try {
+            const res = await profileRequest()
+            // console.log(res.data);
+            return res.data;
+        } catch (error) {
+            console.log(error);
         }
     }
 
@@ -95,6 +105,7 @@ export const AuthProvider = ({children}) => {
             error,
             loading,
             login,
+            profile,
             logout
         }}>
             {children}
